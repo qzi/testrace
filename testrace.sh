@@ -178,7 +178,9 @@ test_all(){
 result_all(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./besttrace -q 1 $1
+	# support arm 8
+	./besttracearm -q 1 $1
+	# ./besttrace -q 1 $1
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
