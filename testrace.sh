@@ -35,7 +35,7 @@ directory(){
 	cd ~/testrace
 }
 install(){
-	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip  && rm besttrace4linux.zip 
+	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip -d ~/besttrace && rm besttrace4linux.zip 
 	[[ ! -d ~/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
 	chmod -R +x ~/
 }
