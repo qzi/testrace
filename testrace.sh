@@ -32,7 +32,7 @@ check_root(){
 }
 directory(){
 	[[ ! -d ~/testrace ]] && mkdir -p /home/testrace
-	cd /home/testrace
+	cd ~/testrace
 }
 install(){
 	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip  && rm besttrace4linux.zip 
