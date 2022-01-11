@@ -14,7 +14,7 @@ echo -e "${Green_font}
 
 # Version: 1.3
 # Latest modified by : leon vision
-# Usage: wget -N https://raw.githubusercontent.com/qzi/testrace/master/testrace.sh
+# Usage: wget -N https://raw.githubusercontent.com/qzi/testrace/master/testrace.sh && bash -x testrace.sh
 # Desc: support ubuntu on arm
 #======================================
 ${Font_suffix}"
