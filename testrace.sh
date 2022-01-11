@@ -11,6 +11,8 @@ echo -e "${Green_font}
 # Author: nanqinlang
 # Blog:   https://sometimesnaive.org
 # Github: https://github.com/nanqinlang
+
+# latest: leon vision
 #======================================
 ${Font_suffix}"
 
@@ -18,7 +20,7 @@ check_system(){
 	if   [[ ! -z "`cat /etc/issue | grep -iE "debian"`" ]]; then
 		apt-get install traceroute mtr -y
 	elif [[ ! -z "`cat /etc/issue | grep -iE "ubuntu"`" ]]; then
-		apt-get install traceroute mtr -y
+		apt-get install traceroute mtr unzip -y
 	elif [[ ! -z "`cat /etc/redhat-release | grep -iE "CentOS"`" ]]; then
 		yum install traceroute mtr -y
 	else
@@ -29,13 +31,13 @@ check_root(){
 	[[ "`id -u`" != "0" ]] && echo -e "${Error} must be root user !" && exit 1
 }
 directory(){
-	[[ ! -d /home/testrace ]] && mkdir -p /home/testrace
+	[[ ! -d ~/testrace ]] && mkdir -p /home/testrace
 	cd /home/testrace
 }
 install(){
-	[[ ! -d /home/testrace/besttrace ]] && wget https://raw.githubusercontent.com/nanqinlang-script/testrace/master/besttrace.tar.gz && tar -zxf besttrace.tar.gz && rm besttrace.tar.gz
-	[[ ! -d /home/testrace/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
-	chmod -R +x /home/testrace
+	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip  && rm besttrace4linux.zip 
+	[[ ! -d ~/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
+	chmod -R +x ~/
 }
 
 
