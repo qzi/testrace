@@ -35,10 +35,11 @@ directory(){
 	cd ~/testrace
 }
 install(){
-	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip -d ~/besttrace && rm besttrace4linux.zip 
-	[[ ! -d ~/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
+	[[ ! -d ./besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip -d ./besttrace && rm besttrace4linux.zip 
+	[[ ! -d ./besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
 	# support arm 8 on ubuntu
-	[[ "${arch}" == "aarch64" ]] && cd ~/besttrace && mv besttracearm besttrace && cd ~/testrace
+	echo $(arch) 
+	[[ $(arch) == "aarch64" ]] && cd ./besttrace && mv besttracearm besttrace && cd ~/testrace
 	chmod -R +x ~/
 }
 
@@ -192,6 +193,7 @@ check_system
 check_root
 directory
 install
+pwd
 cd besttrace
 
 echo -e "${Info} 选择你要使用的功能: "
