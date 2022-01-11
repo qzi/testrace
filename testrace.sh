@@ -35,7 +35,7 @@ directory(){
 	cd ~/testrace
 }
 install(){
-	[[ ! -d ./besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip -o besttrace4linux.zip -d ./besttrace && rm besttrace4linux.zip 
+	[[ ! -d ~/testrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip -o besttrace4linux.zip -d ./besttrace && rm besttrace4linux.zip 
 	[[ ! -d ./besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
 	# support arm 8 on ubuntu
 	echo $(arch) 
