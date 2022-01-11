@@ -37,6 +37,8 @@ directory(){
 install(){
 	[[ ! -d ~/besttrace ]] && wget https://cdn.ipip.net/17mon/besttrace4linux.zip && unzip besttrace4linux.zip -d ~/besttrace && rm besttrace4linux.zip 
 	[[ ! -d ~/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
+	# support arm 8 on ubuntu
+	[[ "${arch}" == "aarch64" ]] cd ~/besttrace && mv besttracearm besttrace && ~/besttrace
 	chmod -R +x ~/
 }
 
@@ -179,8 +181,8 @@ result_all(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
 	# support arm 8
-	./besttracearm -q 1 $1
-	# ./besttrace -q 1 $1
+	# ./besttracearm -q 1 $1
+	./besttrace -q 1 $1
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
