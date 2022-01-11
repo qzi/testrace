@@ -12,7 +12,10 @@ echo -e "${Green_font}
 # Blog:   https://sometimesnaive.org
 # Github: https://github.com/nanqinlang
 
-# latest: leon vision
+# Version: 1.3
+# Latest modified by : leon vision
+# Usage: wget -N https://raw.githubusercontent.com/qzi/testrace/master/testrace.sh
+# Desc: support ubuntu on arm
 #======================================
 ${Font_suffix}"
 
